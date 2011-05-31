@@ -4,7 +4,7 @@ var express = require('express'),
                                connect.cookieParser(),
                                connect.session({secret: 'session'}));
 var fs = require('fs');
-var fitbitClient = require('../')('yourConsumerKey', 'yourConsumerSecret'),
+var fitbitClient = require('../')('yourConsumerKey', 'yourConsumerSecret');
 
 var token;
 app.get('/', function (req, res) {
