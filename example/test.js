@@ -2,7 +2,7 @@ var express = require('express'),
     connect = require('connect'),
     app = express.createServer(connect.bodyParser(),
                                connect.cookieParser('session'),
-                               connect.session()
+                               connect.session());
 var fs = require('fs');
 var fitbitClient = require('../')('yourConsumerKey', 'yourConsumerSecret');
 
