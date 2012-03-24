@@ -21,5 +21,3 @@ Enter your consumer key and secret in example/test.js
     node test.js
 
 open http://localhost:8553
-
-In addition, to get some sample information, replace the '-' in the sample API call with a specific fitbit user id.
