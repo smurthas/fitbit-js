@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/smurthas/fitbit-js.png)](http://travis-ci.org/smurthas/fitbit-js)
 # fitbit-js
 
 Simple FitBit API client for express + connect.
