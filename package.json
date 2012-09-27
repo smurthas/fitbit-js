@@ -1,12 +1,15 @@
 {
     "name": "fitbit-js",
     "description": "Simple FitBit API client",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Simon Murtha-Smith <simon@murtha-smith.com>",
     "keywords": ["fitbit"],
     "main" : "lib/fitbit_client.js",
     "directories" : { "lib" : "./lib" },
-    "dependencies": { "oauth": ">= 0.8.2" },
+    "dependencies": {
+      "oauth": ">= 0.8.2",
+      "serializer": ">=0.0.2 <0.1.0"
+    },
     "repository" : {"type": "git" , "url": "http://github.com/smurthas/fitbit-js.git" },
-    "engines": { "node": ">=0.2.0 <0.7.0" }
+    "engines": { "node": ">=0.8.0 <0.9.0" }
 }

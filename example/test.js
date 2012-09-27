@@ -1,10 +1,10 @@
 var express = require('express'),
     connect = require('connect'),
     app = express.createServer(connect.bodyParser(),
-                               connect.cookieParser('session'),
-                               connect.session());
+                               connect.cookieParser('sess'));
+
 var fs = require('fs');
-var fitbitClient = require('../')('yourConsumerKey', 'yourConsumerSecret');
+var fitbitClient = require('../')(process.argv[2], process.argv[3]);
 
 var token;
 app.get('/', function (req, res) {
@@ -24,8 +24,13 @@ app.get('/getStuff', function (req, res) {
             res.writeHead(200, 'application/json');
             res.end(JSON.stringify(resp));
     });
-    
+
 });
+
+app.get('/cookie', function(req, res) {
+  res.send('wahoo!');
+});
+
 
 app.listen(8553);
 console.log('listening at http://localhost:8553/');
