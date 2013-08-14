@@ -1,9 +1,10 @@
 var express = require('express');
-var connect = require('connect');
-var app = express.createServer(connect.bodyParser(),
-                               connect.cookieParser('sess'));
 
-var fitbitClient = require('../')(process.argv[2], process.argv[3]);
+var app = express();
+app.use(express.bodyParser());
+app.use(express.cookieParser('sess'));
+
+var fitbitClient = require('../')(process.argv[2], process.argv[3], process.argv[4]);
 
 var token;
 app.get('/', function (req, res) {
