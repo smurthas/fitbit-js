@@ -20,7 +20,9 @@ apiCall(http_method, path, params, callback) // Does a call to the FitBit API.
 
 Register an App with fitbit and either specify the callbackURI or append it to the command. NB: There may be some issues specifying 127.0.0.1 or localhost as the callbackURI.
 
-    ```cd test
-    node test.js [appkey] [appsecret] [callbackURI]```
+```bash
+cd test
+node test.js [appkey] [appsecret] [callbackURI]
+```
 
 open [http://localhost:8553](http://localhost:8553)
