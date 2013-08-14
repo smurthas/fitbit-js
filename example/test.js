@@ -4,7 +4,10 @@ var app = express();
 app.use(express.bodyParser());
 app.use(express.cookieParser('sess'));
 
-var fitbitClient = require('../')(process.argv[2], process.argv[3], process.argv[4]);
+var PORT = process.argv[4] || 8553;
+
+var fitbitClient = require('../')(process.argv[2], process.argv[3],
+                                  'http://localhost:' + PORT);
 
 var token;
 app.get('/', function (req, res) {
@@ -19,7 +22,8 @@ app.get('/', function (req, res) {
 
 app.get('/getStuff', function (req, res) {
   fitbitClient.apiCall('GET', '/user/-/activities/date/2011-05-25.json',
-    {token: {oauth_token_secret: token.oauth_token_secret, oauth_token: token.oauth_token}},
+    {token: {oauth_token_secret: token.oauth_token_secret,
+             oauth_token: token.oauth_token}},
     function(err, resp, json) {
       if (err) return res.send(err, 500);
       res.json(json);
@@ -31,5 +35,5 @@ app.get('/cookie', function(req, res) {
 });
 
 
-app.listen(8553);
-console.log('listening at http://localhost:8553/');
+app.listen(PORT);
+console.log('listening at http://localhost:' + PORT + '/');
