@@ -2,6 +2,7 @@
 
 Simple FitBit API client for express + connect.
 
+    npm install oauth express serializer
     npm install fitbit-js
 
 ## Usage
