@@ -24,8 +24,8 @@ callback URL of `http://localhost:8553`.
 
 ```bash
 npm install
-cd test
-node test.js [Consumer Key] [Consumer Secret]
+cd example
+node test.js [Consumer Key] [Consumer Secret] [Unit System (en_US or en_GB)](optional. Defaults to metric units)
 ```
 
 open [http://localhost:8553](http://localhost:8553)
