@@ -4,10 +4,10 @@ var app = express();
 app.use(express.bodyParser());
 app.use(express.cookieParser('sess'));
 
-var PORT = process.argv[4] || 8553;
+var PORT = process.argv[5] || 8553;
 
 var fitbitClient = require('../')(process.argv[2], process.argv[3],
-                                  'http://localhost:' + PORT);
+                                  'http://localhost:' + PORT, process.argv[4]);
 
 var token;
 app.get('/', function (req, res) {
@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/getStuff', function (req, res) {
-  fitbitClient.apiCall('GET', '/user/-/activities/date/2011-05-25.json',
+  fitbitClient.apiCall('GET', '/user/-/profile.json',
     {token: {oauth_token_secret: token.oauth_token_secret,
              oauth_token: token.oauth_token}},
     function(err, resp, json) {
