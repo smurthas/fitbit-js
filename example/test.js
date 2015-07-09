@@ -1,8 +1,10 @@
 var express = require('express');
+var bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
 
 var app = express();
-app.use(express.bodyParser());
-app.use(express.cookieParser('sess'));
+app.use(bodyParser());
+app.use(cookieParser('sess'));
 
 var PORT = process.argv[5] || 8553;
 
