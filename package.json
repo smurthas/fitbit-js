@@ -1,7 +1,7 @@
 {
   "name": "fitbit-js",
   "description": "Simple FitBit API client",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Simon Murtha Smith <simon@murtha-smith.com>",
   "keywords": ["fitbit"],
   "main" : "lib/fitbit_client.js",
@@ -21,6 +21,6 @@
     "url": "http://github.com/smurthas/fitbit-js.git"
   },
   "engines": {
-    "node": ">=0.8.0 <0.11.0"
+    "node": ">=0.8.0 <6.0.0"
   }
 }
